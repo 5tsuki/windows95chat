@@ -1,0 +1,31 @@
+{
+  "name": "windows95chat",
+  "version": "1.0.0",
+  "description": "Simple chat made with Socket.io with Windows 95 aesthetics.",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "windows95chat"
+  },
+  "keywords": [
+    "windows95",
+    "chat",
+    "socket.io",
+    "socket",
+    "nodejs",
+    "node",
+    "javascript",
+    "js"
+  ],
+  "author": "Andrea Lin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
+  }
+}
