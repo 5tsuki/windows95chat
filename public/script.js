@@ -1,7 +1,8 @@
 let username = window.prompt("Inserisci il tuo username (max. 10)");
-
-while (username == null || username.trim() == "" || username.length > 10) {
+username = username.trim();
+while (username == null || username == "" || username.length > 10) {
   username = window.prompt("Inserisci il tuo username (max. 10)");
+  username = username.trim();
 }
 
 const socket = io();
