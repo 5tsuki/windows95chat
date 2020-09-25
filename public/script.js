@@ -1,3 +1,5 @@
+var canType = true;
+
 let username = window.prompt("Inserisci il tuo username (max. 10)");
 username = username.trim();
 while (username == null || username == "" || username.length > 10) {
@@ -23,15 +25,25 @@ document.addEventListener("keypress", function (e) {
 });
 
 function emitMessage() {
-  if (newMessage.value != "") {
-    console.log("il messaggio è valido");
-    let message = {
-      username: username,
-      message: newMessage.value,
-    };
-    socket.emit("msg-to-server", message);
-    newMessage.value = "";
+  if (canType) {
+    if (newMessage.value != "") {
+      console.log("il messaggio è valido");
+      let message = {
+        username: username,
+        message: newMessage.value,
+      };
+      socket.emit("msg-to-server", message);
+      newMessage.value = "";
+    }
+    canType = false;
+    setTimeout(changeType, 2000);
+  } else {
+    window.alert("attendi prima di scrivere!");
   }
+}
+
+function changeType(){
+  canType = true;
 }
 
 socket.on("msg-to-client", (message) => {
